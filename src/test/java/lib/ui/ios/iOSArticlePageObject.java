@@ -1,7 +1,7 @@
 package lib.ui.ios;
 
-import io.appium.java_client.AppiumDriver;
 import lib.ui.ArticlePageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class iOSArticlePageObject extends ArticlePageObject {
     static {
@@ -12,7 +12,7 @@ public class iOSArticlePageObject extends ArticlePageObject {
         CLOSE_AUTH_PLACE = "id:places auth close";
     }
 
-    public iOSArticlePageObject(AppiumDriver driver) {
+    public iOSArticlePageObject(RemoteWebDriver driver) {
 
         super(driver);
     }
