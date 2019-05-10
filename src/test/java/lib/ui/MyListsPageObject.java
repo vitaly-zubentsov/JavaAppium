@@ -85,6 +85,11 @@ abstract public class MyListsPageObject extends MainPageObject {
                     10
             );
 
+            this.waitForElementNotPresent(
+                    remove_locator,
+                    "Remove button is still on page ",
+                    10
+            );
         }
 
         if (Platform.getInstance().isIOS()) {
