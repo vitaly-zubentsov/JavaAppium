@@ -40,7 +40,7 @@ abstract public class MyListsPageObject extends MainPageObject {
         String folder_name_xpath = getFolderXpathByName(name_of_folder);
         this.waitForElementAndClick(
                 folder_name_xpath,
-                "Cannot find folder by name" + name_of_folder,
+                "Cannot find folder by name " + name_of_folder,
                 5
         );
     }
@@ -49,8 +49,8 @@ abstract public class MyListsPageObject extends MainPageObject {
 
         String article_xpath = getSavedArticleXpathByTitle(article_title);
         return this.waitForElementPresent(
-                article_xpath,
-                "Cannot find saved article by title" + article_title,
+                 article_xpath,
+                "Cannot find saved article by title " + article_title,
                 15
         );
 
@@ -124,8 +124,10 @@ abstract public class MyListsPageObject extends MainPageObject {
         WebElement title_element = waitForArticleToAppearByTitle(article_substring_first);
         if (Platform.getInstance().isAndroid()) {
             return title_element.getAttribute("text");
-        } else {
+        } else if (Platform.getInstance().isIOS()){
             return title_element.getAttribute("name");
+        } else {
+            return title_element.getText();
         }
 
     }

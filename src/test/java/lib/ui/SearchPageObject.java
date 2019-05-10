@@ -1,6 +1,5 @@
 package lib.ui;
 
-import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -174,10 +173,10 @@ abstract public class SearchPageObject extends MainPageObject {
         WebElement title_element = waitForSearchResult(substring);
         if (Platform.getInstance().isAndroid()) {
             return title_element.getAttribute("text");
-        } else {
+        } else if (Platform.getInstance().isIOS()){
             return title_element.getAttribute("name");
+        } else {
+            return title_element.getText();
         }
     }
-
-    ;
 }

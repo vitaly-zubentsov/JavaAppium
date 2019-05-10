@@ -176,12 +176,17 @@ abstract public class ArticlePageObject extends MainPageObject {
             this.waitForElementAndClick(
                     OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
                     "Cannot click button to remove an article from saved",
-                    1
+                    10
+            );
+            this.waitForElementNotPresent(
+                    OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
+                    "Remove button an article from saved is still on page",
+                    10
             );
             this.waitForElementPresent(
                     OPTIONS_ADD_TO_MY_LIST,
                     "Cannot find button to add an article to saved list after removing it from list before",
-                    1
+                    10
             );
         }
     }
