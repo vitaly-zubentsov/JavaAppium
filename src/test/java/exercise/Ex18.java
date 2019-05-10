@@ -25,7 +25,7 @@ public class Ex18 extends CoreTestCase {
         );
 
         List<String> list_of_title = asList("Java", "JavaScript", "Java (programming language)");
-        List<String> list_of_description = asList("Island of Indonesia", "Programming language", "Object-oriented programming language");
+        List<String> list_of_description = asList("sland of Indonesia", "rogramming language", "bject-oriented programming language");
 
         for (int i = 0; i < list_of_title.size(); i++) {
             SearchPageObject.waitForElementByTitleAndDescription(list_of_title.get(i), list_of_description.get(i));

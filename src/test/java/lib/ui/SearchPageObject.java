@@ -149,7 +149,7 @@ abstract public class SearchPageObject extends MainPageObject {
     public List getResultListOfSearch() {
 
         return waitForElementsIsPresentAndGetListOfThem(
-                SEARCH_RESULT_ELEMENTS,
+                SEARCH_RESULT_ELEMENT,
                 "Result List Of Search is not present",
                 5);
     }
