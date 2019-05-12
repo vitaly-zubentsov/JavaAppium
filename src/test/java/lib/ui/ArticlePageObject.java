@@ -10,6 +10,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             TITLE,
             FOOTER_ELEMENT,
             OPTIONS_BUTTON,
+            OPTIONS_MY_LIST_BUTTON,
             OPTIONS_ADD_TO_MY_LIST,
             OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
             ADD_TO_EXIST_FOLDER_TPL,
@@ -18,6 +19,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             MY_LIST_OK_BUTTON,
             CLOSE_ARTICLE_BUTTON,
             CLOSE_AUTH_PLACE;
+
 
     /* TEMPLATES METHODS */
     private static String getFolderXpathByName(String name_of_folder) {
@@ -172,7 +174,14 @@ abstract public class ArticlePageObject extends MainPageObject {
 
     public void removeArticleFromSavedIfItAdded() {
 
-        if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)) {
+        this.waitForElementPresent(
+                OPTIONS_MY_LIST_BUTTON,
+                "Cannot find button to add or remove article from My List",
+                10
+        );
+
+
+          if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)) {
             this.waitForElementAndClick(
                     OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
                     "Cannot click button to remove an article from saved",

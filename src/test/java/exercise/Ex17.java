@@ -16,6 +16,7 @@ public class Ex17 extends CoreTestCase {
             login = "Vitaly.zubentsov",
             password = "98511985";
 
+
     @Test
     public void testForExercise17() {
 
